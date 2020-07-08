@@ -27,7 +27,7 @@ int is_prime (int a)
   int counter=0;
   int answer;
 
-  if (a==1)
+  if (a<=1)
       answer=0;
 
   else
@@ -59,7 +59,6 @@ int main (int argc, char **argv)
       exit(1);
     }
 
-  
   n = atoi (argv[1]);
 
   printf("%d\n", is_prime (n));
