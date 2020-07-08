@@ -1,7 +1,7 @@
 /* m006.c - Cross product.
 
    This program reads the coordinates of two 3-dimensional
-   integer vectors and outputs their cross (vector) product. 
+   integer vectors and outputs their cross (vector) product.
    Vectors' coordinates are read as blank-separate real
    numbers.
 
@@ -23,29 +23,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Compute the corss product of vectors 'a' and 'b', 
+/* Compute the corss product of vectors 'a' and 'b',
    and store the result in vector 'c'. */
 
 void crossprod (int a[3], int b[3], int c[3])
 {
+    c[0]=a[1]*b[2]-a[2]*b[1];
+    c[1]=a[0]*b[2]-a[2]*b[0];
+    c[2]=a[0]*b[1]-a[1]*b[0];
 }
-
-
 
 /* Do not edit this function. */
 
 int main (int argc, char **argv)
 {
   int u[3], v[3], z[3];
-  
+
   /* Read matrix lines. */
-  
+
   scanf ("%d %d %d", &u[0], &u[1], &u[2]);
   scanf ("%d %d %d", &v[0], &v[1], &v[2]);
 
   crossprod (u, v, z);
-  
+
   printf ("%d %d %d\n", z[0], z[1], z[2]);
-  
+
   return 0;
 }
