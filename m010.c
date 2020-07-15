@@ -38,11 +38,11 @@ int day_of_week (int day, int month)
   vector[2]=31;
   vector[3]=30;
   vector[4]=31;
-  vector[5]=31;
+  vector[5]=30;
   vector[6]=31;
-  vector[7]=30;
-  vector[8]=31;
-  vector[9]=30;
+  vector[7]=31;
+  vector[8]=30;
+  vector[9]=31;
   vector[10]=30;
 
   for (i=0;i<month;i++)  /* Counting of days until that month. */
@@ -50,7 +50,7 @@ int day_of_week (int day, int month)
 
 a=a+day;  /* Counting of days until that day. */
 
-a=(a+4)%7;  /* Finding the day of week.  */
+a=(a+9)%7;  /* Finding the day of week.  */
 
   return a;
 }
