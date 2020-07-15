@@ -25,6 +25,22 @@
 
 void sort (int* vector, int n)
 {
+  int t;
+  int i;
+  int j;
+
+  for (i=0;i<n;i++)
+  {
+    for (j=i;j<n;j++)
+    {
+      if (vector[j]<vector[i])
+      {
+        t=vector[j];
+        vector[j]=vector[i];
+        vector[i]=t;
+      }
+    }
+  }  
 }
 
 #define USAGE "m009 <num1> <nun2> ... \n"
