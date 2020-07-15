@@ -30,7 +30,29 @@ enum {sun, mon, tue, wed, thu, fri, sat};
 
 int day_of_week (int day, int month)
 {
-  return sun;
+  int a=0,i;
+  int vector[11];
+
+  vector[0]=31;  /* List of days in each month. */
+  vector[1]=29;
+  vector[2]=31;
+  vector[3]=30;
+  vector[4]=31;
+  vector[5]=31;
+  vector[6]=31;
+  vector[7]=30;
+  vector[8]=31;
+  vector[9]=30;
+  vector[10]=30;
+
+  for (i=0;i<month;i++)  /* Counting of days until that month. */
+    a=a+vector[i-1];
+
+a=a+day;  /* Counting of days until that day. */
+
+a=(a+4)%7;  /* Finding the day of week.  */
+
+  return a;
 }
 
 /* Do not edit function main. */
