@@ -22,6 +22,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX 256
 
@@ -30,9 +31,32 @@
 
 void lastname (char *s)
 {
+  int i;
+  int n;
+  int p=99;
+  char t[MAX];
+
+  n = strlen(s);
+
+  for (i=n;s[i]!=32;i--)  /*Finding position of the last space. */
+    p=i;
+  
+  for (i=p;i<n;i++)  /* Putting the last name in capital letters. */
+    if (s[i]>96 && s[i]<123)
+      s[i]=s[i]-32;
+
+  strcpy(t,s);  /* Creating a auxiliar string. */
+
+  for (i=0;i<p;i++)  /* Moving first and middle names to the end. */
+    s[i+1+n-p]=t[i];
+    
+  for (i=0;i<n-p;i++)  /* Moving the last name to beginning. */
+    s[i]=t[i+p];
+
+  s[n-p-1]=',';  /* Adding a comma after the first name. */
+  s[n-p]=32;  /* Adding a space after the comma. */
+
 }
-
-
 
 /* Do not edit this function. */
 
